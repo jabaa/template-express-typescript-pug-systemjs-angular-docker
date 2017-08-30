@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    base(href="/")
+  body
+    app
+      
+    script(src="/node_modules/zone.js/dist/zone.js")
+    script(src="/node_modules/reflect-metadata/Reflect.js")
+    script(src="/node_modules/systemjs/dist/system.js")
+    script(src="/system.config.js")
+    script SystemJS.import('app');

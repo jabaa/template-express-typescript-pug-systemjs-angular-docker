@@ -1,0 +1,8 @@
+node_modules
+ts-node
+
+#IDE configuration files
+.idea
+*.iml
+
+dist
