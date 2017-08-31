@@ -11,13 +11,12 @@ import * as browserSync from 'browser-sync';
 
 import config from './config';
 
-gulp.task('serve', () => {
-  return runSequence(
+gulp.task('serve', () => runSequence(
     'build',
     'server.start',
     'watch.build'
-  );
-})
+  )
+);
 
 gulp.task('build', ['copy', 'ts', 'pug', 'scss']);
 
@@ -61,26 +60,11 @@ gulp.task('pug', () => {
 });
 
 gulp.task('server.start', () => {
-  browserSync.init({
-    middleware: [require('connect-history-api-fallback')({
-      index: '/index.html'
-    })],
-    port: config.port,
-    startPath: '/',
-    open: true,
-    injectChanges: false,
-    server: {
-      baseDir: config.clientDist,
-      routes: {
-        ['/node_modules']: 'node_modules',
-        ['/']: config.clientDist
-      }
-    }
-  });
-})
+  browserSync.init(config.BROWSER_SYNC_INIT);
+});
 
 gulp.task('watch.build', () => {
   watch(path.join('src', 'client', '**', '*.ts'), (event) => runSequence('ts', () => browserSync.reload(event.path)));
   watch(path.join('src', 'client', '**', '*.scss'), (event) => runSequence('scss', () => browserSync.reload(event.path)));
   watch(path.join('src', 'client', '**', '*.pug'), (event) => runSequence('pug', () => browserSync.reload(event.path)));
-})
+});

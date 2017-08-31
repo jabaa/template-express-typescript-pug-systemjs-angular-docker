@@ -1,13 +1,33 @@
 import * as path from 'path';
 
 class Config {
-  src = 'src';
-  dist = 'dist';
+  SRC = 'src';
+  DIST = 'dist';
 
-  clientSrc = path.join(this.src, 'client');
-  clientDist = path.join(this.dist, 'client');
+  CLIENT_SRC = path.join(this.SRC, 'client');
+  CLIENT_DIST = path.join(this.DIST, 'client');
 
-  port = 3000;
+  EXPRESS_PORT = 3000;
+  BROWSER_SYNC_PORT = 3001;
+
+  BROWSER_SYNC_INIT = {
+    injectChanges: false,
+    // middleware: [require('connect-history-api-fallback')({
+    //   index: '/index.html'
+    // })],
+    open: true,
+    port: this.BROWSER_SYNC_PORT,
+    proxy: `localhost:${this.EXPRESS_PORT}`,
+    // server: {
+    //   baseDir: this.CLIENT_DIST,
+    //   routes: {
+    //     ['/node_modules']: 'node_modules',
+    //     ['/']: this.CLIENT_DIST
+    //   }
+    // },
+    startPath: '/',
+    ui: false
+  };
 }
 
 const config = new Config();

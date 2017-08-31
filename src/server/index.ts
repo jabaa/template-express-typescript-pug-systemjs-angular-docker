@@ -6,12 +6,12 @@ const app = express();
 
 import config from '../../config';
 
-const clientDir = path.join(__dirname, '..', '..', config.clientDist);
+const clientDir = path.join(__dirname, '..', '..', config.CLIENT_DIST);
 
 app.use('/node_modules', express.static(path.join(__dirname, '..', '..', 'node_modules')));
 app.use('/', express.static(clientDir));
 app.use(fallback('/index.html'))
 
-app.listen(config.port, function () {
-  console.log(`Example app listening on port ${config.port}!`);
+app.listen(config.EXPRESS_PORT, function () {
+  console.log(`Example app listening on port ${config.EXPRESS_PORT}!`);
 });
