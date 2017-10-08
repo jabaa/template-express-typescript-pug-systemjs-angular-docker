@@ -16,10 +16,12 @@ Angular, Typescript, Pug, Sass, Systemjs
 
 Docker, git, gulp
 
-## Init project
+## System requirements
 
-Initialise a new project in an empty directory with
+* docker >= 17.09.0-ce
+* docker-compose >= 1.16.1
 
-```bash
-git init
-```
+## Start webapp
+
+docker-compose up
+Open localhost:3001
