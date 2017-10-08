@@ -21,7 +21,13 @@ Docker, git, gulp
 * docker >= 17.09.0-ce
 * docker-compose >= 1.16.1
 
-## Start webapp
+## Usage
+
+### Start webapp
 
 * docker-compose up
 * Open localhost:3001
+
+### Development
+
+Docker image must be rebuilt on every change outside of src
