@@ -2,8 +2,11 @@ import * as path from 'path';
 
 import * as gulp from 'gulp';
 import * as ts from 'gulp-typescript';
+import tslint from 'gulp-tslint';
 import * as sass from 'gulp-sass';
+import * as sasslint from 'gulp-sass-lint';
 import * as pug from 'gulp-pug';
+import * as puglint from 'gulp-pug-lint';
 
 import * as watch from 'gulp-watch';
 import * as runSequence from 'run-sequence';
@@ -37,6 +40,7 @@ gulp.task('ts', () => {
   const dist = 'dist/client';
 
   return gulp.src(src)
+    .pipe(tslint())
     .pipe(tsProject())
     .pipe(gulp.dest(dist));
 });
@@ -46,6 +50,7 @@ gulp.task('scss', () => {
   const dist = 'dist/client';
 
   return gulp.src(src)
+    .pipe(sasslint())
     .pipe(sass())
     .pipe(gulp.dest(dist));
 });
@@ -55,6 +60,7 @@ gulp.task('pug', () => {
   const dist = 'dist/client';
 
   return gulp.src(src)
+    .pipe(puglint())
     .pipe(pug())
     .pipe(gulp.dest(dist));
 });
