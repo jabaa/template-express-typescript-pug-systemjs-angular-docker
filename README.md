@@ -23,5 +23,5 @@ Docker, git, gulp
 
 ## Start webapp
 
-docker-compose up
-Open localhost:3001
+* docker-compose up
+* Open localhost:3001
