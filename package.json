@@ -1,7 +1,7 @@
 {
-  "name": "template-express-typescript-pug-systemjs-angular",
+  "name": "template-express-typescript-pug-systemjs-angular-docker",
   "version": "1.0.0",
-  "description": "A template project with expressjs, typescript, pug, systemjs and angular",
+  "description": "A template project with expressjs, typescript, pug, systemjs, angular and docker",
   "scripts": {
     "compodoc": "./node_modules/.bin/compodoc -p src/client/tsconfig.json",
     "serve.compodoc": "./node_modules/.bin/compodoc -s",
