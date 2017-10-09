@@ -6,3 +6,5 @@ ts-node
 *.iml
 
 dist
+
+typedoc

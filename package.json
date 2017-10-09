@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "A template project with expressjs, typescript, pug, systemjs, angular and docker",
   "scripts": {
-    "compodoc": "./node_modules/.bin/compodoc -p src/client/tsconfig.json",
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json",
     "serve.compodoc": "./node_modules/.bin/compodoc -s",
     "serve.dev": "concurrently \"gulp serve --color\" \"ts-node src/server\"",
-    "serve": "ts-node src/server"
+    "serve": "ts-node src/server",
+    "typedoc": "typedoc --out typedoc src/client"
   },
   "author": "Thomas Sablik",
   "license": "ISC",
