@@ -123,3 +123,5 @@ gulp.task('watch.build.dev', () => {
                '!' + path.join(config.CLIENT_SRC, '**', '*.pug')];
   watch(src, (event) => runSequence('copy', () => browserSync.reload(event.path)));
 });
+
+gulp.task('test', ['build.prod']);
