@@ -7,6 +7,9 @@ class Config {
   CLIENT_SRC = path.join(this.SRC, 'client');
   CLIENT_DIST = path.join(this.DIST, 'client');
 
+  SERVER_SRC = path.join(this.SRC, 'server');
+  SERVER_DIST = path.join(this.DIST, 'server');
+
   EXPRESS_PORT = 3000;
   BROWSER_SYNC_PORT = 3001;
 

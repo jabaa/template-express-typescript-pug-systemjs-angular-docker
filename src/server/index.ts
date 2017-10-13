@@ -4,7 +4,7 @@ import * as fallback from 'express-history-api-fallback';
 import * as express from 'express';
 const app = express();
 
-import config from '../../config';
+import config from '../config';
 
 const clientDir = path.join(__dirname, '..', '..', config.CLIENT_DIST);
 
