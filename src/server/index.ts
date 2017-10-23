@@ -12,6 +12,6 @@ app.use('/node_modules', express.static(path.join(__dirname, '..', '..', 'node_m
 app.use('/', express.static(clientDir));
 app.use(fallback('/index.html'))
 
-app.listen(config.EXPRESS_PORT, function () {
+app.listen(config.EXPRESS_PORT, () => {
   console.log(`Example app listening on port ${config.EXPRESS_PORT}!`);
 });
