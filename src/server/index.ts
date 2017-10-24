@@ -6,7 +6,12 @@ const app = express();
 
 import config from '../config';
 
+import * as bodyParser from 'body-parser';
+
 const clientDir = path.join(__dirname, '..', '..', config.CLIENT_DIST);
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use('/node_modules', express.static(path.join(__dirname, '..', '..', 'node_modules')));
 app.use('/', express.static(clientDir));
