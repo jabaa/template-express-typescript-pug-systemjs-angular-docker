@@ -3,7 +3,9 @@
     "tslint:recommended"
   ],
   "rules": {
+    "no-console": false,
     "no-trailing-whitespace": true,
-    "quotemark": [true, "single"]
+    "quotemark": [true, "single"],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}]
   }
 }
